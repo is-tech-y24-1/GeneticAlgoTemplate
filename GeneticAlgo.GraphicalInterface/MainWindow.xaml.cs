@@ -4,15 +4,17 @@ using System.Threading;
 using System.Windows;
 using GeneticAlgo.GraphicalInterface.Tools;
 using GeneticAlgo.Shared;
+using Serilog;
 
 namespace GeneticAlgo.GraphicalInterface
 {
+    // ReSharper disable once RedundantExtendsListEntry
     public partial class MainWindow : Window
     {
         //TODO: move to configuration
         private static readonly TimeSpan IterationInterval = TimeSpan.FromMilliseconds(100);
 
-        private bool _isActive = false;
+        private bool _isActive;
         private readonly IExecutionContext _executionContext;
         private readonly IPixelDrawer _pd;
         private readonly IStatConsumer _statConsumer;
@@ -20,6 +22,8 @@ namespace GeneticAlgo.GraphicalInterface
         public MainWindow()
         {
             InitializeComponent();
+
+            Logger.Init();
 
             //TODO:
             _executionContext = new DummyExecutionContext();
@@ -37,13 +41,14 @@ namespace GeneticAlgo.GraphicalInterface
             _isActive = true;
         }
 
-        private void StartSimulation(object sender, DoWorkEventArgs e)
+        private void StartSimulation(object? sender, DoWorkEventArgs e)
         {
             _isActive = true;
             while (true)
             {
                 StartSimulator();
             }
+            // ReSharper disable once FunctionNeverReturns
         }
 
         public void StartSimulator()
@@ -51,10 +56,12 @@ namespace GeneticAlgo.GraphicalInterface
             if (!_isActive)
                 return;
 
+            Log.Information("Start simulation");
             _executionContext.OnRoundStart();
-            bool runNextRound = false;
+            bool runNextRound;
             do
             {
+                Log.Debug("Round start");
                 if (!_isActive)
                     return;
 
