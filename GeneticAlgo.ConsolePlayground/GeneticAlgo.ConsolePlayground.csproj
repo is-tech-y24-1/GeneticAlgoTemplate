@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GeneticAlgo.Core\GeneticAlgo.Core.csproj" />
+    <ProjectReference Include="..\GeneticAlgo.Shared\GeneticAlgo.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

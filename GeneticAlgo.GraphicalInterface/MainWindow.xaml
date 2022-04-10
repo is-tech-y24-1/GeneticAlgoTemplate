@@ -18,16 +18,14 @@
         <Button
             Margin="0,27,188,0"
             VerticalAlignment="Top"
-            Content="Start" HorizontalAlignment="Right" Width="74" />
-        <TextBox
+            Content="Start" HorizontalAlignment="Right" Width="74" Click="Button_Click" />
+        <ListBox
             Name="CountInput"
             Width="120"
             Height="23"
             Margin="638,62,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text="1"
-            TextWrapping="Wrap" />
-        <oxy:PlotView Name="VelocityPlot" Margin="10,624,50,68"/>
+            VerticalAlignment="Top"/>
+        <oxy:PlotView Name="PlotSample" Margin="10,624,50,68"/>
     </Grid>
 </Window>

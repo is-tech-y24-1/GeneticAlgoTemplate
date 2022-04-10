@@ -11,4 +11,9 @@
     <PackageReference Include="OxyPlot.Wpf" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GeneticAlgo.Core\GeneticAlgo.Core.csproj" />
+    <ProjectReference Include="..\GeneticAlgo.Shared\GeneticAlgo.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
