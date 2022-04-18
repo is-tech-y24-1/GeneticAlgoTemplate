@@ -5,11 +5,11 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgo.Core", "GeneticAlgo.Core\GeneticAlgo.Core.csproj", "{294B2B1A-89E7-4B91-8927-71334C454A81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgo.GraphicalInterface", "GeneticAlgo.GraphicalInterface\GeneticAlgo.GraphicalInterface.csproj", "{536A5E91-19A8-48FD-A12E-917EECC1F611}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgo.ConsolePlayground", "GeneticAlgo.ConsolePlayground\GeneticAlgo.ConsolePlayground.csproj", "{8FC52BCD-7965-462A-B4E8-41C9894D4E7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgo.Shared", "GeneticAlgo.Shared\GeneticAlgo.Shared.csproj", "{CB0B8678-232B-40BD-B0C5-41526D94C95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgo.GraphicalInterface", "GeneticAlgo.GraphicalInterface\GeneticAlgo.GraphicalInterface.csproj", "{B92577C9-7C67-40A8-AD5C-C6C05806C81A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{294B2B1A-89E7-4B91-8927-71334C454A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{294B2B1A-89E7-4B91-8927-71334C454A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{294B2B1A-89E7-4B91-8927-71334C454A81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{536A5E91-19A8-48FD-A12E-917EECC1F611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{536A5E91-19A8-48FD-A12E-917EECC1F611}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{536A5E91-19A8-48FD-A12E-917EECC1F611}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{536A5E91-19A8-48FD-A12E-917EECC1F611}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FC52BCD-7965-462A-B4E8-41C9894D4E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FC52BCD-7965-462A-B4E8-41C9894D4E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FC52BCD-7965-462A-B4E8-41C9894D4E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{CB0B8678-232B-40BD-B0C5-41526D94C95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB0B8678-232B-40BD-B0C5-41526D94C95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB0B8678-232B-40BD-B0C5-41526D94C95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92577C9-7C67-40A8-AD5C-C6C05806C81A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92577C9-7C67-40A8-AD5C-C6C05806C81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92577C9-7C67-40A8-AD5C-C6C05806C81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92577C9-7C67-40A8-AD5C-C6C05806C81A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
