@@ -32,6 +32,7 @@ public class PlotStatisticConsumer : IStatisticsConsumer
         }
 
         _linearBarSeries.ItemsSource = statistics
-            .Select(s => new FitnessModel(s.Id, _fitnessEvaluator.Evaluate(s.Fitness)));
+            .Select(s => new FitnessModel(s.Id, _fitnessEvaluator.Evaluate(s.Fitness)))
+            .ToArray();
     }
 }
