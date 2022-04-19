@@ -13,17 +13,14 @@ namespace GeneticAlgo.GraphicalInterface.ViewModels;
 public class MainWindowViewModel : AvaloniaObject
 {
     private readonly IStatisticsConsumer _statisticsConsumer;
-    private readonly IFitnessEvaluator _fitnessEvaluator;
     private readonly IExecutionContext _executionContext;
     private readonly ExecutionConfiguration _configuration;
 
     public MainWindowViewModel(
         IExecutionContext executionContext,
-        IFitnessEvaluator fitnessEvaluator,
         ExecutionConfiguration configuration)
     {
         _executionContext = executionContext;
-        _fitnessEvaluator = fitnessEvaluator;
         _configuration = configuration;
 
         IsRunning = AvaloniaProperty
@@ -55,7 +52,7 @@ public class MainWindowViewModel : AvaloniaObject
             Series = { barSeries },
         };
 
-        _statisticsConsumer = new PlotStatisticConsumer(lineSeries, barSeries, fitnessEvaluator);
+        _statisticsConsumer = new PlotStatisticConsumer(lineSeries, barSeries);
     }
 
     public PlotModel ScatterModel { get; }
@@ -72,9 +69,6 @@ public class MainWindowViewModel : AvaloniaObject
         lineSeries.XAxis.Minimum = _configuration.MinimumValue;
         lineSeries.YAxis.Maximum = _configuration.MaximumValue;
         lineSeries.YAxis.Minimum = _configuration.MinimumValue;
-
-        barSeries.YAxis.Maximum = _fitnessEvaluator.MaxValue;
-        barSeries.YAxis.Minimum = _fitnessEvaluator.MinValue;
 
         SetValue(IsRunning, true);
         _executionContext.Reset();

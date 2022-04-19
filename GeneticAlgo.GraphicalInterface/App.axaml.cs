@@ -26,7 +26,6 @@ namespace GeneticAlgo.GraphicalInterface
                 var collection = new ServiceCollection();
                 collection.AddSingleton<MainWindowViewModel>();
                 collection.AddSingleton<IExecutionContext>(_ => new DummyExecutionContext(100, maximum));
-                collection.AddSingleton<IFitnessEvaluator>(_ => new GreaterFitnessEvaluator(0, maximum));
                 collection.AddSingleton(new ExecutionConfiguration(TimeSpan.FromMilliseconds(100), maximum, 0));
 
                 var provider = collection.BuildServiceProvider();

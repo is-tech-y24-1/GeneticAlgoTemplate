@@ -10,15 +10,13 @@ namespace GeneticAlgo.GraphicalInterface.Tools;
 
 public class PlotStatisticConsumer : IStatisticsConsumer
 {
-    private readonly IFitnessEvaluator _fitnessEvaluator;
     private readonly LineSeries _scatterSeries;
     private readonly LinearBarSeries _linearBarSeries;
 
-    public PlotStatisticConsumer(LineSeries scatterSeries, LinearBarSeries linearBarSeries, IFitnessEvaluator fitnessEvaluator)
+    public PlotStatisticConsumer(LineSeries scatterSeries, LinearBarSeries linearBarSeries)
     {
         _scatterSeries = scatterSeries;
         _linearBarSeries = linearBarSeries;
-        _fitnessEvaluator = fitnessEvaluator;
     }
 
     public void Consume(IReadOnlyCollection<Statistic> statistics)
@@ -32,7 +30,7 @@ public class PlotStatisticConsumer : IStatisticsConsumer
         }
 
         _linearBarSeries.ItemsSource = statistics
-            .Select(s => new FitnessModel(s.Id, _fitnessEvaluator.Evaluate(s.Fitness)))
+            .Select(s => new FitnessModel(s.Id, s.Fitness))
             .ToArray();
     }
 }
