@@ -4,14 +4,16 @@ namespace GeneticAlgo.Shared.Tools;
 
 public class DummyExecutionContext : IExecutionContext
 {
+    private readonly int _circleCount;
     private readonly int _pointCount;
     private readonly int _maximumValue;
     private readonly Random _random;
 
-    public DummyExecutionContext(int pointCount, int maximumValue)
+    public DummyExecutionContext(int pointCount, int maximumValue, int circleCount)
     {
         _pointCount = pointCount;
         _maximumValue = maximumValue;
+        _circleCount = circleCount;
         _random = Random.Shared;
     }
     
@@ -30,6 +32,10 @@ public class DummyExecutionContext : IExecutionContext
             .Select(i => new Statistic(i, new Point(Next, Next), Next))
             .ToArray();
 
-        statisticsConsumer.Consume(statistics);
+        BarrierCircle[] circles = Enumerable.Range(0, _circleCount)
+            .Select(_ => new BarrierCircle(new Point(Next, Next), 10 * Next))
+            .ToArray();
+
+        statisticsConsumer.Consume(statistics, circles);
     }
 }

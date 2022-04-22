@@ -25,18 +25,23 @@ public class MainWindowViewModel : AvaloniaObject
         IsRunning = AvaloniaProperty
             .RegisterAttached<MainWindowViewModel, bool>(nameof(IsRunning), typeof(MainWindowViewModel));
 
-        var lineSeries = new LineSeries
+        var lineSeries = new ScatterSeries
         {
-            StrokeThickness = 0,
             MarkerSize = 3,
             MarkerStroke = OxyColors.ForestGreen,
             MarkerType = MarkerType.Plus,
         };
 
+        var circleSeries = new ScatterSeries
+        {
+            MarkerFill = OxyColors.Red,
+            MarkerType = MarkerType.Circle,
+        };
+
         ScatterModel = new PlotModel
         {
             Title = "Points",
-            Series = { lineSeries },
+            Series = { lineSeries, circleSeries },
         };
 
         var barSeries = new LinearBarSeries
@@ -51,7 +56,7 @@ public class MainWindowViewModel : AvaloniaObject
             Series = { barSeries },
         };
 
-        _statisticsConsumer = new PlotStatisticConsumer(lineSeries, barSeries);
+        _statisticsConsumer = new PlotStatisticConsumer(circleSeries, lineSeries, barSeries);
     }
 
     public PlotModel ScatterModel { get; }
@@ -61,13 +66,13 @@ public class MainWindowViewModel : AvaloniaObject
 
     public async Task RunAsync()
     {
-        var lineSeries = (LineSeries)ScatterModel.Series.Single();
-        var barSeries = (LinearBarSeries)BarModel.Series.Single();
-
-        lineSeries.XAxis.Maximum = _configuration.MaximumValue;
-        lineSeries.XAxis.Minimum = _configuration.MinimumValue;
-        lineSeries.YAxis.Maximum = _configuration.MaximumValue;
-        lineSeries.YAxis.Minimum = _configuration.MinimumValue;
+        foreach (var series in ScatterModel.Series.OfType<XYAxisSeries>())
+        {
+            series.XAxis.Maximum = _configuration.MaximumValue;
+            series.XAxis.Minimum = _configuration.MinimumValue;
+            series.YAxis.Maximum = _configuration.MaximumValue;
+            series.YAxis.Minimum = _configuration.MinimumValue;
+        }
 
         SetValue(IsRunning, true);
         _executionContext.Reset();

@@ -6,7 +6,7 @@ using Serilog;
 
 Logger.Init();
 Log.Information("Start console polygon");
-var dummyExecutionContext = new DummyExecutionContext(10, 10);
+var dummyExecutionContext = new DummyExecutionContext(10, 10, 3);
 dummyExecutionContext.Reset();
 await dummyExecutionContext.ExecuteIterationAsync();
 Log.Information("Polygon end");
