@@ -1,14 +1,13 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia;
-using GeneticAlgo.GraphicalInterface.Models;
-using GeneticAlgo.GraphicalInterface.Tools;
+using GeneticAlgo.AvaloniaInterface.Tools;
 using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
 using OxyPlot;
 using OxyPlot.Series;
 
-namespace GeneticAlgo.GraphicalInterface.ViewModels;
+namespace GeneticAlgo.AvaloniaInterface.ViewModels;
 
 public class MainWindowViewModel : AvaloniaObject
 {

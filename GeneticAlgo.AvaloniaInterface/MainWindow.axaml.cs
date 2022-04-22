@@ -1,8 +1,8 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using GeneticAlgo.GraphicalInterface.ViewModels;
+using GeneticAlgo.AvaloniaInterface.ViewModels;
 
-namespace GeneticAlgo.GraphicalInterface
+namespace GeneticAlgo.AvaloniaInterface
 {
     public partial class MainWindow : Window
     {

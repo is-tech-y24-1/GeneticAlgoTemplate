@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using GeneticAlgo.GraphicalInterface.Models;
 using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
 using OxyPlot;
 using OxyPlot.Series;
 
-namespace GeneticAlgo.GraphicalInterface.Tools;
+namespace GeneticAlgo.WpfInterface.Tools;
 
 public class PlotStatisticConsumer : IStatisticsConsumer
 {

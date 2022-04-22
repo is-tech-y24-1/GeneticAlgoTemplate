@@ -2,13 +2,13 @@ using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using GeneticAlgo.GraphicalInterface.ViewModels;
+using GeneticAlgo.AvaloniaInterface.ViewModels;
 using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
 using GeneticAlgo.Shared.Tools;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GeneticAlgo.GraphicalInterface
+namespace GeneticAlgo.AvaloniaInterface
 {
     public partial class App : Application
     {

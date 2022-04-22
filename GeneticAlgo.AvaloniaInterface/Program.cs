@@ -1,9 +1,7 @@
 ﻿using System;
 using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Controls.ApplicationLifetimes;
 
-namespace GeneticAlgo.GraphicalInterface
+namespace GeneticAlgo.AvaloniaInterface
 {
     class Program
     {
