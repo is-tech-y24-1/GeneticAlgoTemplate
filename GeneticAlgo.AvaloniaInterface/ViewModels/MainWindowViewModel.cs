@@ -41,7 +41,7 @@ public class MainWindowViewModel : AvaloniaObject
         ScatterModel = new PlotModel
         {
             Title = "Points",
-            Series = { lineSeries, circleSeries },
+            Series = { circleSeries, lineSeries },
         };
 
         var barSeries = new LinearBarSeries
