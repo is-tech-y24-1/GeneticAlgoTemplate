@@ -27,6 +27,6 @@
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\GeneticAlgo.Shared\GeneticAlgo.Shared.csproj" />
+      <ProjectReference Include="..\GeneticAlgo.UIShared\GeneticAlgo.UIShared.csproj" />
     </ItemGroup>
 </Project>

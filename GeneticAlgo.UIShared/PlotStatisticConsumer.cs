@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
 using OxyPlot.Series;
 
-namespace GeneticAlgo.AvaloniaInterface.Tools;
+namespace GeneticAlgo.UIShared;
 
 public class PlotStatisticConsumer : IStatisticsConsumer
 {

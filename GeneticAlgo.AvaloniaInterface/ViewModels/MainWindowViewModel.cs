@@ -1,9 +1,9 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia;
-using GeneticAlgo.AvaloniaInterface.Tools;
 using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
+using GeneticAlgo.UIShared;
 using OxyPlot;
 using OxyPlot.Series;
 

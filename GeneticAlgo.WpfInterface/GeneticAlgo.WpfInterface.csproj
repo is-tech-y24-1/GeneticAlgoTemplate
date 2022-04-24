@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GeneticAlgo.Core\GeneticAlgo.Core.csproj" />
-    <ProjectReference Include="..\GeneticAlgo.Shared\GeneticAlgo.Shared.csproj" />
+    <ProjectReference Include="..\GeneticAlgo.UIShared\GeneticAlgo.UIShared.csproj" />
   </ItemGroup>
 
 </Project>

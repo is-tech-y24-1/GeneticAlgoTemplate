@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using GeneticAlgo.Shared;
 using GeneticAlgo.Shared.Models;
-using OxyPlot;
 using OxyPlot.Series;
 
 namespace GeneticAlgo.WpfInterface.Tools;
