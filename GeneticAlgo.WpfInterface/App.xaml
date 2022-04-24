@@ -1,8 +1,7 @@
 ﻿<!-- ReSharper disable once Xaml.RedundantNamespaceAlias -->
-<Application x:Class="GeneticAlgo.GraphicalInterface.App"
+<Application x:Class="GeneticAlgo.WpfInterface.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:GeneticAlgo.GraphicalInterface"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

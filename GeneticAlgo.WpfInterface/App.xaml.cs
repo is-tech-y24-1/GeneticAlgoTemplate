@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace GeneticAlgo.GraphicalInterface
+namespace GeneticAlgo.WpfInterface
 {
     /// <summary>
     /// Interaction logic for App.xaml
