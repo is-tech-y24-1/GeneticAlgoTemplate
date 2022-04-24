@@ -6,31 +6,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:oxy="http://oxyplot.org/wpf"
-        Title="MainWindow" Height="1100" Width="1500">
+        Title="MainWindow" Height="910" Width="969">
     <Grid Margin="0,0,0, 0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="837*"/>
-            <RowDefinition Height="253*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image
-            x:Name="ImageView"
-            Width="600"
-            Height="600"
-            Margin="10,10,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
         <Button
-            Margin="0,27,188,0"
+            Margin="806,102,0,0"
             VerticalAlignment="Top"
-            Content="Start" HorizontalAlignment="Right" Width="74" Click="Button_Click" />
+            Content="Start" HorizontalAlignment="Left" Width="74" Click="Button_Click" />
         <ListBox
             Name="CountInput"
             Width="120"
             Height="23"
-            Margin="638,62,0,0"
+            Margin="783,37,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"/>
-        <oxy:PlotView Name="PlotSample" Margin="10,610,0,104" HorizontalAlignment="Left" Width="727" Grid.RowSpan="2"/>
-        <oxy:PlotView Name="PlotSample2" Margin="762,610,0,104" Grid.RowSpan="2"/>
+        <oxy:PlotView Name="PlotSample" Margin="0,10,0,659" HorizontalAlignment="Left" Width="727"/>
+        <oxy:PlotView Name="PlotSample2" Margin="0,335,0,335" HorizontalAlignment="Left" Width="727"/>
     </Grid>
 </Window>

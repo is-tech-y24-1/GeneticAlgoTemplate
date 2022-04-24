@@ -20,12 +20,12 @@ namespace GeneticAlgo.WpfInterface
 
         private bool _isActive;
 
-        private readonly IStatisticsConsumer _statisticsConsumer;
+        private IStatisticsConsumer _statisticsConsumer;
         private readonly IExecutionContext _executionContext;
         private readonly ExecutionConfiguration _configuration;
 
-        public PlotModel ScatterModel { get; }
-        public PlotModel BarModel { get; }
+        public PlotModel ScatterModel { get; private set; }
+        public PlotModel BarModel { get; private set; }
 
         public MainWindow()
         {
@@ -33,18 +33,39 @@ namespace GeneticAlgo.WpfInterface
 
             Logger.Init();
 
-            var lineSeries = new LineSeries
+            _executionContext = new DummyExecutionContext(100, 10, 3);
+            _configuration = new ExecutionConfiguration(IterationInterval, 10, 0);
+
+            InitPlots();
+
+            PlotSample.Model = ScatterModel;
+            PlotSample2.Model = BarModel;
+
+
+            var worker = new BackgroundWorker();
+            worker.DoWork += StartSimulation;
+            worker.RunWorkerAsync();
+        }
+
+        public void InitPlots()
+        {
+            var lineSeries = new ScatterSeries
             {
-                StrokeThickness = 0,
                 MarkerSize = 3,
                 MarkerStroke = OxyColors.ForestGreen,
                 MarkerType = MarkerType.Plus,
             };
 
+            var circleSeries = new ScatterSeries
+            {
+                MarkerFill = OxyColors.Red,
+                MarkerType = MarkerType.Circle,
+            };
+
             ScatterModel = new PlotModel
             {
                 Title = "Points",
-                Series = { lineSeries },
+                Series = { circleSeries, lineSeries },
             };
 
             var barSeries = new LinearBarSeries
@@ -59,16 +80,7 @@ namespace GeneticAlgo.WpfInterface
                 Series = { barSeries },
             };
 
-            _statisticsConsumer = new PlotStatisticConsumer(lineSeries, barSeries);
-            _executionContext = new DummyExecutionContext(100, 10);
-            _configuration = new ExecutionConfiguration(IterationInterval, 10, 0);
-
-            PlotSample.Model = ScatterModel;
-            PlotSample2.Model = BarModel;
-
-            var worker = new BackgroundWorker();
-            worker.DoWork += StartSimulation;
-            worker.RunWorkerAsync();
+            _statisticsConsumer = new PlotStatisticConsumer(circleSeries, lineSeries, barSeries);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
